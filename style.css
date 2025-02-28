@@ -1,0 +1,24 @@
+.subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 1000;
+    color: #252201;
+    margin-top: 0;
+    font-size: 24px; /* Ajuste la taille ici */
+    
+  }#subscribeButton {
+    display: block;
+    visibility: visible;
+    background-color: initial;
+    color: initial;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0073e6;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#subscribeButton:hover {
+    background: #005bb5;
+}

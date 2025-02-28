@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNICORN - Web3-GPT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .header {
+      text-align: center;
+    }
+    .logo {
+      max-width: 70px;
+      height: auto;
+      display: block;
+      margin: 0 auto 5px;
+    }
+    .language-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    .lang-btn {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #0073e6;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .lang-btn:hover {
+      background: #005bb5;
+    }
+    h1, h2 {
+      color: #0073e6;
+      margin: 0;
+    }
+    .subtitle {
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      color: #252201;
+      margin-top: 0;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: linear-gradient(135deg, #00458a, #0868c9);
+      color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    li:hover {
+      background: linear-gradient(135deg, #005bb5, #0073e6);
+    }
+    li.clicked {
+      background: red;
+    }
+    .textbox {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+      display: none;
+    }
+  </style>
+  <!-- Ajout du lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/logo.png" alt="UNICORN Logo" class="logo">
+      <div class="language-switcher">
+        <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('es')">Español</button>
+        <button class="lang-btn" onclick="setLanguage('ar')">العربية</button>
+      </div>
+      <h1 id="header-title">Bienvenue chez UNICORN Web3Gpt</h1>
+    </div>
+    <p class="subtitle" id="subtitle">Découvrez nos projets futurs :</p>
+
+    
+      
+    <ul>
+      <li id="tech-innovation" onclick="handleClick(this, 'tech-innovation-text')">Innovation Technologique</li>
+      <div class="textbox" id="tech-innovation-text"></div>
+      <li id="user-growth" onclick="handleClick(this, 'user-growth-text')">Croissance Utilisateurs</li>
+      <div class="textbox" id="user-growth-text"></div>
+      <li id="ecological-cooperation" onclick="handleClick(this, 'ecological-cooperation-text')">Coopération Écologique</li>
+      <div class="textbox" id="ecological-cooperation-text"></div>
+    </ul>
+    <a href="https://web3-gpt.vip/#/pages/account/register?shareCode=83458710">...Inscrivez-vous ici...</a> <!-- Français -->
+    <a href="https://web3-gpt.vip/#/pages/account/register?shareCode=83458710">...Sign up here...</a> <!-- English -->
+    <a href="https://web3-gpt.vip/#/pages/account/register?shareCode=83458710">...سجل هنا...</a> <!-- العربية -->
+    <a href="https://web3-gpt.vip/#/pages/account/register?shareCode=83458710">...Regístrate aquí...</a> <!-- Español -->
+    
+    </div>
+
+  <script>
+    const languageData = {
+      fr: {
+        title: "Bienvenue chez UNICORN Web3Gpt",
+        subtitle: "Découvrez nos projets futurs :",
+        items: [
+          "Innovation Technologique",
+          "Croissance Utilisateurs",
+          "Coopération Écologique"
+        ],
+        texts: [
+          "Optimiser et améliorer continuellement les algorithmes intelligents pour améliorer la sécurité et l'efficacité des transactions et garantir aux utilisateurs la meilleure expérience de trading dans un environnement de marché complexe.",
+          "Simplifier l'expérience utilisateur et améliorer l'interactivité  de la plateforme, attirer plus d'utilisateurs à s'inscrire et à utiliser nos services, élargir la base d'utilisateurs et améliorer la fidélité des utilisateurss.",
+          "Construire activement des relations de coopération avec les principales  plateformes de trading, les projets blockchain et les institutions financières pour parvenir au partage des ressources et à la co-création de valeur, et promouvoir la vulgarisation complète des services de trading intelligents."
+        ]
+      },
+      en: {
+        title: "Welcome to UNICORN Web3Gpt",
+        subtitle: "Discover our future projects:",
+        items: [
+          "Technological Innovation",
+          "User Growth",
+          "Ecological Cooperation"
+        ],
+        texts: [
+          "Continuously optimize and improve smart algorithms to improve the security and efficiency of transactions and ensure that users get the best trading experience in a complex market environment",
+          "Simplify user experience and enhance platform interactivity to attract more users to register and use our services, expand user base, and improve user stickiness and loyalty",
+          "Actively build cooperative relationships with major trading platforms, blockchain projects, and financial institutions to achieve resource sharing and value co-creation, and promote the comprehensive popularization of smart trading services"
+        ]
+      },
+      es: {
+        title: "Bienvenido a UNICORN Web3Gpt",
+        subtitle: "Descubra nuestros proyectos futuros:",
+        items: [
+          "Innovación Tecnológica",
+          "Crecimiento de Usuarios",
+          "Cooperación Ecológica"
+        ],
+        texts: [
+          "Optimizar y mejorar continuamente los algoritmos inteligentes para mejorar la seguridad y eficiencia de las transacciones y garantizar a los usuarios la mejor experiencia de trading en un entorno de mercado complejo...",
+          "Simplificar la experiencia del usuario y mejorar la interactividad de la plataforma para atraer a más usuarios a registrarse y utilizar",
+          "Construir activamente relaciones de cooperación con las principales plataformas de trading, proyectos blockchain e instituciones financieras para lograr el intercambio de recursos y la co-creación de valor, y promover la popularización completa de los servicios de trading inteligentes..."
+        ]
+      },
+      ar: {
+        title: "مرحبًا بك في يونيكورن ويب 3 جي بي تي",
+        subtitle: "اكتشف مشاريعنا المستقبلية:",
+        items: [
+          "الابتكار التكنولوجي",
+          "نمو المستخدمين",
+          "التعاون البيئي"
+        ],
+        texts: [
+          "تحسين وتعزيز الخوارزميات الذكية بشكل مستمر لتحسين أمان وكفاءة المعاملات وضمان أن يحصل المستخدمون على أفضل تجربة تداول في بيئة سوق معقدة...",
+          "تبسيط تجربة المستخدم وتحسين التفاعل على المنصة لجذب المزيد من المستخدمين للتسجيل واستخدام خدماتنا، وتوسيع قاعدة المستخدمين وتحسين ولاء المستخدمين...",
+          "بناء علاقات تعاونية نشطة مع المنصات الرئيسية للتداول ومشاريع البلوكشين والمؤسسات المالية لتحقيق تبادل الموارد وتعزيز خلق القيمة، وتعزيز الانتشار الشامل لخدمات التداول الذكية..."
+        ]
+      }
+    };
+
+    function setLanguage(lang) {
+      const data = languageData[lang];
+      document.getElementById('header-title').textContent = data.title;
+      document.getElementById('subtitle').textContent = data.subtitle;
+      
+      document.querySelectorAll('li').forEach((item, index) => {
+        item.textContent = data.items[index];
+      });
+
+      document.querySelectorAll('.textbox').forEach(box => {
+        box.style.display = 'none';
+        box.textContent = '';
+      });
+      document.querySelectorAll('li').forEach(item => {
+        item.classList.remove('clicked');
+      });
+
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.className = lang;
+    }
+
+    function handleClick(element, textBoxId) {
+      let textBox = document.getElementById(textBoxId);
+      let isClicked = element.classList.contains('clicked');
+      const currentLang = Array.from(document.body.classList).find(cls => ['fr', 'en', 'es', 'ar'].includes(cls));
+
+      if (isClicked) {
+        textBox.style.display = 'none';
+        element.classList.remove('clicked');
+      } else {
+        document.querySelectorAll('.textbox').forEach(box => box.style.display = 'none');
+        document.querySelectorAll('li').forEach(item => item.classList.remove('clicked'));
+        
+        textBox.style.display = 'block';
+        element.classList.add('clicked');
+        const index = Array.from(element.parentElement.children).indexOf(element) / 2;
+        textBox.textContent = languageData[currentLang].texts[index];
+      }
+    }
+
+  </script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
